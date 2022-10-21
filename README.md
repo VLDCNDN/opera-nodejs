@@ -16,7 +16,7 @@ List of Function you can use
 <table>
     <thead>
         <tr>
-            <th>Function</th>
+            <th>Classes</th>
             <th>Methods</th>
             <th>Params</th>
         </tr>
