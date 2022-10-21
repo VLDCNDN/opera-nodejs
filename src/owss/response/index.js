@@ -1,4 +1,5 @@
 module.exports = {
   FetchBookingResponse: require('./FetchBookingResponse'),
-  FutureBookingSummaryResponse: require('./FutureBookingSummaryResponse')
+  FutureBookingSummaryResponse: require('./FutureBookingSummaryResponse'),
+  PostChargeResponse: require('./PostChargeResponse')
 }

@@ -29,6 +29,21 @@ List of Function you can use
             <td>byRoomNumberAndInhouse</td>
             <td>- <b>roomNumber</b> : String<b><br>- config:</b> <a href="#credential">Credential</a></td>
         </tr>
+        <tr>
+            <td rowspan=1>PostChargeRequest</td>
+            <td>byReservationId</td>
+            <td>{- <b>reservationId</b> : String<br>
+            - <b>shortInfo</b>: String <br>
+            - <b>longInfo</b>: String <br>
+            - <b>charge</b>: Number  <br>
+            - account: String (Optional) <br>
+            - userId: String (Optional) <br>
+            - stationID: String (Optional) <br>
+            } <br>
+            - <b>config:</b> <a href="#credential">Credential</a><br><br>
+             <b><em>Note</em></b>: the reservationID to stationID is destructured
+            </td>
+        </tr>
     </tbody>
 </table>
 
