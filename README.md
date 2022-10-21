@@ -13,7 +13,6 @@ Please Refer to this [link](https://docs.oracle.com/cd/E90572_01/index.html) to 
 
 # Functions
 List of Function you can use
-```html
 <table>
     <thead>
         <tr>
@@ -54,7 +53,6 @@ List of Function you can use
         </tr>
     </tbody>
 </table>
-```
 
 ### <a name="credential">Credential</a>
 This must be passdown as an object
