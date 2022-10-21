@@ -2,6 +2,14 @@ This is based in Oracle Hospitality OPERA Web Self-Service
 
 Please Refer to this [link](https://docs.oracle.com/cd/E90572_01/index.html) to get the idea
 
+# To Use
+- after cloning
+- copy .env.copy and rename it to .env
+- add required fields
+  - Note: Follow the <a href="#credential">Credential</a></td> what you need to input in .env
+- check the file in test folder or you can create your own
+- try running `mocha`
+
 
 # Functions
 List of Function you can use
@@ -103,3 +111,5 @@ This must be passdown as an object
     </tr>
   </tbody>
 </table>
+
+
