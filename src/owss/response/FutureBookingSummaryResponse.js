@@ -50,7 +50,6 @@ module.exports = class FutureBookingSummaryResponse {
   
   getReservationWithGuest() {
     for(const resv of this.#reservations) {
-      // arr.push(resv.toJson());
       if(resv.getGuestCount() > 0) {
         return resv;
       }
@@ -62,10 +61,7 @@ module.exports = class FutureBookingSummaryResponse {
   }
 
   get() {
-    return {
-      result: this.getResult(),
-      data: this.#reservations
-    }
+    return this.#reservations
   }
 
   toJson() {

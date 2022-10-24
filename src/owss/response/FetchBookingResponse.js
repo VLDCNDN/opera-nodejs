@@ -1,4 +1,4 @@
-const HotelReservation = require('./classes/HotelReservation');
+const HotelReservation = require("./classes/HotelReservation");
 
 class FetchBookingResponse {
   #resultStatus;
@@ -16,12 +16,11 @@ class FetchBookingResponse {
 
     this.resultStatus = resultStatusFlag; // this only contains, SUCCESS and FAIL
     if (resultStatusFlag === "FAIL") {
-      if(FetchResult["c:OperaErrorCode"] !== undefined) {
+      if (FetchResult["c:OperaErrorCode"] !== undefined) {
         this.resultMessage = FetchResult["c:OperaErrorCode"][0];
       } else {
-        this.resultMessage = FetchResult['hc:GDSError'][0]['_'];
+        this.resultMessage = FetchResult["hc:GDSError"][0]["_"];
       }
-      
     }
 
     this.processResult(FetchBookingResp);
@@ -35,18 +34,17 @@ class FetchBookingResponse {
   }
 
   processResult(fetchBookingResp) {
-    if(this.resultStatus === "FAIL") {
+    if (this.resultStatus === "FAIL") {
       return;
     }
-    
-    this.reservation = new HotelReservation(fetchBookingResp['HotelReservation'][0]);
+
+    this.reservation = new HotelReservation(
+      fetchBookingResp["HotelReservation"][0]
+    );
   }
 
   get() {
-    return {
-      result: this.getResult(),
-      data: this.reservation
-    }
+    return this.reservation;
   }
 }
 
