@@ -20,8 +20,12 @@ module.exports = class FetchBookedPackagesResponse {
         this.#resultMessage = Result["GDSError"][0]["_"];
       }
     }
-
-    this.#processResult(packagesResp["BookedPackageList"][0]["PackageDetails"]);
+    if(packagesResp["BookedPackageList"] === undefined) {
+      this.#packages = [];
+    } else {
+      this.#processResult(packagesResp["BookedPackageList"][0]["PackageDetails"]);
+    }
+    
   }
 
   #processResult(packages) {

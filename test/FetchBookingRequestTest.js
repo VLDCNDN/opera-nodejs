@@ -16,36 +16,36 @@ const config = {
   password: process.env.OPERA_PASSWORD,
 };
 
-// describe("Index", () => {
-//   it("it should Return sample", async () => {
-//     const resp = await FetchBookingRequest.byConfirmationNumber(
-//       "50902",
-//       config
-//     );
+describe("Index", () => {
+  it("it should Return sample", async () => {
+    const resp = await FetchBookingRequest.byConfirmationNumber(
+      "50902",
+      config
+    );
 
-//     const resp2 = await FetchBookedPackagesRequest.byConfirmationNumber(
-//       resp.get().getConfirmationNumber(),
-//       config
-//     );
+    const resp2 = await FetchBookedPackagesRequest.byConfirmationNumber(
+      resp.get().getReservationId(),
+      config
+    );
 
-//     const packages = resp2.filter({
-//       filterByValidDate: "2022-10-25",
-//       filterByPackageCodes: ["BDBKT", "CHBF"],
-//     })
+    const packages = resp2.filter({
+      filterByValidDate: "2022-10-25",
+      filterByPackageCodes: ["BDBKT", "CHBF"],
+    })
 
-//     console.log(packages);
+    console.log(packages);
 
-//     return;
-//     // expect(index.requests).to.equal('test');
-//     const d = resp.get();
-//     if (d.result.status === "FAIL") {
-//       console.log("FAIL");
-//       return;
-//     }
+    return;
+    // expect(index.requests).to.equal('test');
+    const d = resp.get();
+    if (d.result.status === "FAIL") {
+      console.log("FAIL");
+      return;
+    }
 
-//     console.log(d.data.toJson());
-//   });
-// });
+    console.log(d.data.toJson());
+  });
+});
 
 // describe("Index", () => {
 //   it("Test postcharge", async () => {
