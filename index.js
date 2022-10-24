@@ -1,5 +1,5 @@
 const requests = {
-  owss: "test"
+  owss: require('./src/owss/requests')
 }
 
 module.exports = requests;
