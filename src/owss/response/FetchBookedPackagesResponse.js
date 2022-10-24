@@ -30,7 +30,7 @@ module.exports = class FetchBookedPackagesResponse {
 
   #processResult(packages) {
     const arr = [];
-    for (const pckg of packages) {
+    for (const pckg of packages) {      
       arr.push(new PackageDetails(pckg));
     }
 
@@ -53,28 +53,27 @@ module.exports = class FetchBookedPackagesResponse {
    */
   filter({ filterByValidDate = "", filterByPackageCodes = [] }) {
     const arr = [];
-
-    if(filterByValidDate === "" || filterByPackageCodes.length === 0) {
+    if(filterByValidDate !== "" && filterByPackageCodes.length < 0) {
       return arr;
     }
 
     for (const pckg of this.#packages) {
       const dataPackages = pckg.get();
+      
       for (const data of dataPackages) {     
         var startDate = new Date(data['validStartDate']);
         var filterDate = new Date(filterByValidDate);
-
         if (filterByValidDate !== "" && filterByPackageCodes.length > 0) {
           if(filterByPackageCodes.includes(data['packageCode']) 
           && filterDate.toDateString() === startDate.toDateString()
           ) {
             arr.push(data);
           }
-        } else if (filterByValidDate !== "" && filterByPackageCodes.length === 0) {
+        } else if (filterByValidDate !== "" && filterByPackageCodes.length <= 0) {
           if(filterDate.toDateString() === startDate.toDateString()) {
             arr.push(data);
           }
-        } else if(filterByValidDate === "" && filterByPackageCodes.length > 0) {
+        } else if(filterByValidDate === "" && filterByPackageCodes.length >= 0) {
           if(filterByPackageCodes.includes(data['packageCode'])) {
             arr.push(data);
           }

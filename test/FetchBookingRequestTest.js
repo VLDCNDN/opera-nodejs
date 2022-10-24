@@ -18,19 +18,19 @@ const config = {
 
 describe("Index", () => {
   it("it should Return sample", async () => {
-    const resp = await FetchBookingRequest.byConfirmationNumber(
-      "50902",
+    const resp = await FutureBookingSummaryRequest.byRoomNumberAndInhouse(
+      "0516",
       config
     );
 
     const resp2 = await FetchBookedPackagesRequest.byConfirmationNumber(
-      resp.get().getReservationId(),
+      resp.getReservationWithGuest().getConfirmationNumber(),
       config
     );
 
     const packages = resp2.filter({
-      filterByValidDate: "2022-10-25",
-      filterByPackageCodes: ["BDBKT", "CHBF"],
+      // filterByValidDate: new Date().toISOString().slice(0, 10),
+      filterByPackageCodes: ["CHBF"]
     })
 
     console.log(packages);

@@ -66,10 +66,8 @@ module.exports = class FutureBookingSummaryResponse {
 
   toJson() {
     const arr = [];
-    // console.log(this.#reservations);
     for(const resv of this.#reservations) {
       // arr.push(resv.toJson());
-      // console.log(resv.toJson());
     }
 
     // return arr;
