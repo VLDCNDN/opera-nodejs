@@ -1,5 +1,5 @@
 {
-  "name": "opera-node",
+  "name": "@palvisioncorp/opera-node",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
