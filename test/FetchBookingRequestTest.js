@@ -1,11 +1,12 @@
 let chai = require("chai");
 var expect = chai.expect;
-require('dotenv').config();
+require("dotenv").config();
 
 let {
   FetchBookingRequest,
   FutureBookingSummaryRequest,
-  PostChargeRequest
+  PostChargeRequest,
+  FetchBookedPackagesRequest,
 } = require("../src/owss/requests");
 
 const config = {
@@ -15,25 +16,36 @@ const config = {
   password: process.env.OPERA_PASSWORD,
 };
 
-describe("Index", () => {
-  it("it should Return sample", async () => {
-    const resp = await FetchBookingRequest.byConfirmationNumber(
-      "50902",
-      config
-    );
+// describe("Index", () => {
+//   it("it should Return sample", async () => {
+//     const resp = await FetchBookingRequest.byConfirmationNumber(
+//       "50902",
+//       config
+//     );
 
-    console.log(resp.get().getComments());
-    return;
-    // expect(index.requests).to.equal('test');
-    const d = resp.get();
-    if (d.result.status === "FAIL") {
-      console.log("FAIL");
-      return;
-    }
+//     const resp2 = await FetchBookedPackagesRequest.byConfirmationNumber(
+//       resp.get().getConfirmationNumber(),
+//       config
+//     );
 
-    console.log(d.data.toJson());
-  });
-});
+//     const packages = resp2.filter({
+//       filterByValidDate: "2022-10-25",
+//       filterByPackageCodes: ["BDBKT", "CHBF"],
+//     })
+
+//     console.log(packages);
+
+//     return;
+//     // expect(index.requests).to.equal('test');
+//     const d = resp.get();
+//     if (d.result.status === "FAIL") {
+//       console.log("FAIL");
+//       return;
+//     }
+
+//     console.log(d.data.toJson());
+//   });
+// });
 
 // describe("Index", () => {
 //   it("Test postcharge", async () => {
@@ -43,7 +55,7 @@ describe("Index", () => {
 //       longInfo: "longINfooo",
 //       charge: 123,
 //     };
-    
+
 //     const resp = PostChargeRequest.byReservationId(
 //             sampleData,config
 //           ).then(resp => {
