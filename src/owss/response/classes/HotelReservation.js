@@ -11,6 +11,8 @@ module.exports = class HotelReservation {
       ][0];
     this.customer = this.profile["Customer"][0]["PersonName"][0];
     this.addresses = this.profile["Addresses"][0]["NameAddress"][0];
+
+    console.log(reservation);
   }
 
   ////////////////////////////////////////////////////////////////
@@ -114,6 +116,14 @@ module.exports = class HotelReservation {
     }, 0);
 
     return total;
+  }
+
+  /**
+   * Note: this will only return mostly using ${FetchBookingRequest}
+   */
+  getComments() {
+    const comments = this.roomStay["hc:Comments"][0]["hc:Comment"][0]['hc:Text'];
+    return comments;
   }
 
   toJson() {
