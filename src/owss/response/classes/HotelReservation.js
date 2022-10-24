@@ -122,7 +122,8 @@ module.exports = class HotelReservation {
    * Note: this will only return mostly using ${FetchBookingRequest}
    */
   getComments() {
-    const comments = this.roomStay["hc:Comments"][0]["hc:Comment"][0]['hc:Text'];
+    const comments = this.roomStay["hc:Comments"] !== undefined ? this.roomStay["hc:Comments"][0]["hc:Comment"][0]['hc:Text'] : [];
+
     return comments;
   }
 

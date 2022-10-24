@@ -17,12 +17,12 @@ const config = {
 
 describe("Index", () => {
   it("it should Return sample", async () => {
-    const resp = await FetchBookingRequest.byReservationId(
-      "56903",
+    const resp = await FetchBookingRequest.byConfirmationNumber(
+      "50902",
       config
     );
 
-    console.log(resp.get().data.getComments());
+    console.log(resp.get().getComments());
     return;
     // expect(index.requests).to.equal('test');
     const d = resp.get();
