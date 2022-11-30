@@ -8,6 +8,7 @@ let {
   PostChargeRequest,
   FetchBookedPackagesRequest,
   FetchRoomStatusRequest,
+  AssignRoomAdvRequest,
 } = require("../src/owss/requests");
 
 let {
@@ -42,12 +43,13 @@ const ohipConfig = {
 describe("Index", () => {
 
   it("it should Return sample", async () => {
-    const resp = await FetchRoomStatusRequest.byRoomNumber(
-            "0202",
+    const resp = await AssignRoomAdvRequest.byRoomNumberAndReservationId(
+            "59903",
+            "0217",
             owssConfig
           );
 
-    console.log(resp.get());
+    console.log(resp.getResult());
   });
 //   it("it should Return sample", async () => {
 //     const resp = await FutureBookingSummaryRequest.byRoomNumberAndInhouse(

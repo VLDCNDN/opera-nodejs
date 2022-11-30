@@ -4,4 +4,5 @@ module.exports = {
   PostChargeResponse: require("./PostChargeResponse"),
   FetchBookedPackagesResponse: require("./FetchBookedPackagesResponse"),
   FetchRoomStatusResponse: require("./FetchRoomStatusResponse"),
+  AssignRoomAdvResponse: require("./AssignRoomAdvResponse"),
 };
