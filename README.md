@@ -37,6 +37,11 @@ List of Function you can use
             <td>- <b>roomNumber</b> : String<b><br>- config:</b> <a href="#credential">Credential</a></td>
         </tr>
         <tr>
+            <td rowspan=1>FetchRoomStatusRequest</td>
+            <td>byRoomNumber</td>
+           <td>- <b>roomNumber</b> : String<b><br>- config:</b> <a href="#credential">Credential</a></td>
+        </tr>
+        <tr>
             <td rowspan=1>PostChargeRequest</td>
             <td>byReservationId</td>
             <td>{- <b>reservationId</b> : String<br>

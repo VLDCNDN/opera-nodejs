@@ -7,6 +7,7 @@ let {
   FutureBookingSummaryRequest,
   PostChargeRequest,
   FetchBookedPackagesRequest,
+  FetchRoomStatusRequest,
 } = require("../src/owss/requests");
 
 let {
@@ -38,7 +39,16 @@ const ohipConfig = {
   appKey: process.env.OHIP_APPKEY,
 }
 
-// describe("Index", () => {
+describe("Index", () => {
+
+  it("it should Return sample", async () => {
+    const resp = await FetchRoomStatusRequest.byRoomNumber(
+            "0202",
+            owssConfig
+          );
+
+    console.log(resp.get());
+  });
 //   it("it should Return sample", async () => {
 //     const resp = await FutureBookingSummaryRequest.byRoomNumberAndInhouse(
 //       "0516",
@@ -87,14 +97,14 @@ const ohipConfig = {
 //           // console.log();
 //     // console.log(resp.getResult());
 //   });
-// });
+});
 describe("Ohip", () => {
-  it("Reservation Request", async () => {
-    const reservation = new Reservations(ohipConfig);
-    const data = await reservation.getAll();
+  // it("Reservation Request", async () => {
+  //   const reservation = new Reservations(ohipConfig);
+  //   const data = await reservation.getAll();
 
-    console.log(data);
-  });
+  //   console.log(data);
+  // });
   
   // it("Opera service", async () => {
   //   const auth = new OperaService(ohipConfig);

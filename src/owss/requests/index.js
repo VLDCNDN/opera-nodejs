@@ -3,4 +3,5 @@ module.exports = {
   FutureBookingSummaryRequest: require("./FutureBookingSummaryRequest"),
   PostChargeRequest: require("./PostChargeRequest"),
   FetchBookedPackagesRequest: require("./FetchBookedPackagesRequest"),
+  FetchRoomStatusRequest: require("./FetchRoomStatusRequest"),
 };
